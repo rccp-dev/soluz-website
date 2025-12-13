@@ -176,7 +176,7 @@ export default function Page() {
 
       <main className="items-center mx-4 md:max-w-6xl sm:mx-10 md:mx-auto px-4 scroll-smooth" role="main" aria-label="Conteúdo principal">
 
-        <section id="hero" className="flex justify-center my-20 md:mt-0 md:mb-40 items-center h-[70vh]" aria-label="Seção principal">
+        <section id="hero" className="flex justify-center my-20 md:mt-0 md:mb-40 items-center md:h-[70vh]" aria-label="Seção principal">
           <div className="relative text-center max-w-2xl px-4 mx-auto">
             <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
               Design e software para impulsionar marcas e produtos digitais
