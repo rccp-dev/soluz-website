@@ -82,7 +82,7 @@ export default function Page() {
           <div className="md:hidden relative flex  items-center p-5">
             
             <button
-              className="text-2xl focus:outline-none focus:ring-2 focus:ring-offset-2"
+              className="link-fx text-2xl focus:outline-none focus:ring-2 focus:ring-offset-2"
               aria-label="Abrir menu mobile"
               aria-expanded={open}
               aria-controls="mobile-menu"
