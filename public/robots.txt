@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://savatto.vercel.app/sitemap.xml

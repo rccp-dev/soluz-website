@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Smooch&family=Smooch+Sans:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import "tailwindcss";
 
 @theme {
 
-    /* Paleta de cores */
+  /* Paleta de cores */
   --color-primary: #ff6333;
   --color-primary-light: #f7c59f;
   --color-secondary: #004e89;
@@ -15,15 +16,14 @@
   /* Fontes */
   --font-smooch: "Smooch Sans", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-  
+
 }
 
 :root {
 
-    /* Aplicações */
   --background: var(--color-black);
   --foreground: var(--color-white);
-  
+
 }
 
 a:focus {
@@ -31,14 +31,115 @@ a:focus {
   box-shadow: none;
 }
 
-.link-fx {
-  @apply transition-transform duration-300
-         hover:scale-105 hover:brightness-110
-         focus:scale-105 focus:brightness-110
-         focus:outline-none focus:ring-0;
+
+@layer components {
+
+  .link-fx {
+    @apply transition-transform duration-300 hover:scale-105 hover:brightness-110 focus:scale-105 focus:brightness-110 focus:outline-none focus:ring-0;
+  }
+
+  .btn-primary {
+    @apply max-w-80 md:w-auto w-full inline-block text-sm md:text-lg font-semibold mt-6 px-10 py-3 rounded-full bg-primary;
+  }
+
+  .btn-outline {
+    @apply max-w-80 md:w-auto w-full inline-block text-sm md:text-lg font-semibold mt-6 px-10 py-3 rounded-full border-primary border-2;
+  }
+
+  .btn-cta {
+    @apply max-w-80 md:w-auto w-full inline-block text-sm md:text-lg font-semibold mt-6 px-10 py-3 rounded-full bg-primary;
+  }
+
+  .btn-mobile {
+    @apply inline-block -ml-4 px-4 py-2 rounded-full bg-primary;
+  }
+
+  .btn-menu {
+    @apply -ml-2 px-6 py-2 font-bold rounded-full bg-primary
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  .info-box {
+    @apply p-4 rounded-md border;
+  }
+
+  .info-title {
+    @apply text-xl font-medium;
+  }
+
+  .info-detail {
+    @apply mt-2 text-sm;
+  }
+
+  .hero-section {
+    @apply flex relative justify-center items-center h-screen;
+  }
+
+  .hero-background {
+    @apply hidden md:block absolute inset-0 -z-10;
+  }
+
+  .hero-content {
+    @apply flex-col relative justify-center text-center mx-10 z-10 px-4;
+    margin-top: 50px;
+    /* Header (180px) dividido por 2 menos botão interativo (40px)*/
+  }
+
+  @media (min-width: 768px) {
+    .hero-content {
+      max-width: 600px;
+      @apply mx-0;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-content {
+      max-width: 800px;
+    }
+  }
+
+  .header {
+    @apply fixed top-0 z-50 w-full md:pb-10 bg-black/90 md:bg-transparent md:bg-linear-to-b from-black to-transparent backdrop-blur-md md:backdrop-blur-none;
+  }
+
+  .menu {
+    @apply flex items-center justify-center gap-8 px-10 py-3 backdrop-blur-md bg-[#313131]/80 rounded-full max-w-3xl;
+  }
+
+  .menu-div {
+    @apply hidden md:flex justify-center;
+  }
+
+  .menu-mobile {
+    @apply md:hidden relative flex items-center;
+  }
+
+  .mobile {
+    @apply md:hidden flex flex-col gap-4 ml-4 px-4 pb-4 text-lg
+  }
+
+  .center {
+    @apply absolute left-1/2 -translate-x-1/2;
+  }
+
+  .shadow-lg-custom {
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.6);
+  }
+
+  .shadow-sm-custom {
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  scroll-behavior: smooth;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins);
